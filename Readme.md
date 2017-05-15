@@ -1,12 +1,16 @@
 # Docker container for OSSEC
 
-This Docker container source files can be found in our [ossec-wazuh Github repository](https://github.com/wazuh/ossec-wazuh). It includes both an OSSEC manager and an Elasticsearch single-node cluster, with Logstash and Kibana. You can find more information on how these components work together in our documentation.
+This Docker container source files can be found in our [wazuh Github repository](https://github.com/wazuh/wazuh). It includes both an OSSEC manager and an Elasticsearch single-node cluster, with Logstash and Kibana. You can find more information on how these components work together in our documentation.
+
+# Important Note
+
+This container wont be updated, a new container with Wazuh 2.0 and Elastic Stack 5 in the following URL: [https://github.com/wazuh/wazuh-docker](https://github.com/wazuh/wazuh-docker).
 
 ## Documentation
 
 * [Full documentation](http://documentation.wazuh.com)
-* [OSSEC integration with ELK Stack](http://documentation.wazuh.com/en/latest/ossec_elk.html)
-* [Docker container documentation](http://documentation.wazuh.com/en/latest/ossec_docker.html#ossec-elk-container)
+* [OSSEC integration with ELK Stack](https://documentation.wazuh.com/1.1/ossec_elk.html)
+* [Docker container documentation](https://documentation.wazuh.com/1.1/ossec_docker.html)
 * [Docker Hub](https://hub.docker.com/r/wazuh/ossec-elk/)
 
 ## Credits and thank you
@@ -65,7 +69,7 @@ This release will also include:
 * Upgraded Ruleset v1.07
 
 
-## Wazuh RESTful API v1.2 
+## Wazuh RESTful API v1.2
 
 This new release has been an effort to have a much more solid API. We would like to highlight especially the following new capabilities:
 
@@ -73,5 +77,3 @@ This new release has been an effort to have a much more solid API. We would like
 * API Versioning by URL or HTTP header.
 * On adding a new agent, the IP will be automatically detected.
 * IP detection works behind a proxy server.
-
-
