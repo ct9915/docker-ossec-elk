@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y python-software-properties debconf-util
 RUN add-apt-repository -y ppa:webupd8team/java &&\
     apt-get update &&\
     echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | sudo debconf-set-selections &&\
-    apt-get -yf install oracle-java8-installer
+    apt-get -yf install openjdk-7-jre
 
 
 RUN wget -qO - https://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add - &&\
@@ -61,7 +61,7 @@ RUN service ossec restart &&\
 
 RUN cp /root/ossec_tmp/ossec-wazuh/extensions/logstash/01-ossec-singlehost.conf /etc/logstash/conf.d/ &&\
     cp /root/ossec_tmp/ossec-wazuh/extensions/elasticsearch/elastic-ossec-template.json  /etc/logstash/ &&\
-    curl -O "http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz" &&\
+    curl -O "https://github.com/ct9915/GeoLiteCity.dat.gz/raw/master/GeoLiteCity.dat.gz" &&\
     gzip -d GeoLiteCity.dat.gz && sudo mv GeoLiteCity.dat /etc/logstash/ &&\
     usermod -a -G ossec logstash
 
